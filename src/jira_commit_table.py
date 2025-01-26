@@ -252,10 +252,10 @@ def main(config_file):
 
     # Retrieve JIRA token and Slack token from environment variables or AWS SSM Parameter Store
     #jira_token = os.getenv('JIRA_TOKEN') 
-    jira_token = get_parameter_from_ssm('/QA_SlackBot/jiraToken')
+    jira_token = get_parameter_from_ssm('/example_token/jiraToken')
     
     #slack_token = os.getenv('SLACK_TOKEN')
-    slack_token = get_parameter_from_ssm('/QA_SlackBot/QAslackToken')
+    slack_token = get_parameter_from_ssm('/example_token/slackToken')
 
     if not jira_token:
         logging.error("JIRA_TOKEN environment variable not set and failed to retrieve from SSM")
